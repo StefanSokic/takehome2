@@ -97,7 +97,7 @@ a {
 
 /* --------------- Main Content -----------------------------*/
 .Content {
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   display: flex;
   flex-direction: row;
@@ -136,7 +136,7 @@ a {
 
 @media (max-width :580px) {
   .VideoContainer {
-    margin-top: 55%;
+    margin-top: 30%;
     height: 400px;
     z-index: 1000;
     display: flex;
@@ -155,8 +155,7 @@ a {
 .ShirtFlip {
   margin-top: 8vh;
   margin-left: -5%;
-  height: 68%;
-  /* width: 46%; */
+  height: 445px;
   background-color: #efefff;
   z-index: 100;
 }
@@ -169,7 +168,6 @@ a {
 }
 .ShirtFlipLeft > img{
   padding: 1em;
-  /* padding-bottom: 5em; */
   border-bottom: 1px solid #190dfe;
 }
 .ShirtFlipLeft > h2{
@@ -320,7 +318,7 @@ a {
     max-width: 400px;
     min-width: 400px;
     height: 75%;
-    margin-top: 50%;
+    margin-top: 30%;
   }
   .OrderTitle {
     font-size: 16pt;
