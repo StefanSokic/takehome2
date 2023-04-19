@@ -1,0 +1,654 @@
+body {
+  overflow: hidden;
+  background: linear-gradient(180deg,#cacaff,#efefff);
+  --vh: 884px;
+  margin: 0;
+}
+.Main {
+  min-height: 100vh;
+}
+
+p {
+  font-size: 11px;
+  font-family: "VCR OSD Mono", monospace;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* --------------- Overlay -----------------------------*/
+.Logo {
+  width: 128px;
+  position: absolute;
+  top: 9%;
+  left: 1%;
+  z-index: 100000;
+}
+
+.Menu {
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  font-family: "VCR OSD Mono", monospace;
+  font-size: 20px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: row;
+  z-index: 100000;
+}
+
+.MenuLogo {
+  width: 18px;
+  height: 15px;
+  margin: 0 5px;
+  margin-left: 10px;
+  align-self: center;
+}
+
+.MenuOption {
+  color: #000;
+  margin: 0 6px;
+}
+.MenuOption:hover {
+  color: #0d00ff;
+}
+
+.LeftArrow {
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+  z-index: 100000;
+  width: 75px;
+}
+
+.RightArrow {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  z-index: 100000;
+  width: 75px;
+}
+
+@media (max-width :580px) {
+  .Terms {
+    display: none;
+  }
+  .Menu {
+    top: 4%;
+  }
+  .Logo {
+    width: 96px;
+    height: 115px;
+    top: 3%;
+  }
+  .LeftArrow {
+    bottom: 43%;
+    width: 40px;
+  }
+  
+  .RightArrow {
+    bottom: 43%;
+    width: 40px;
+  }
+}
+
+/* --------------- Main Content -----------------------------*/
+.Content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  height: 88vh
+}
+.Content > p {
+  margin: 5em;
+}
+.Content {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.Content::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+@media (max-width :580px) {
+  .Content {
+    height: 98vh;
+  }
+}
+
+/* --------------- Video -----------------------------*/
+.VideoContainer {
+  margin-left: 20%;
+  height: 98%;
+}
+.Video {
+  height: 100%;
+}
+.VideoLogos {
+  display: none;
+  background-color: #efefff;
+}
+
+@media (max-width :580px) {
+  .VideoContainer {
+    margin-top: 55%;
+    height: 400px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+  }
+  .VideoLogos {
+    display: block;
+    margin-left: -20px;
+    background-color: #efefff;
+    border-left: 1px solid #190dfe;
+  }
+}
+
+/* --------------- ShirtFlipper -----------------------------*/
+.ShirtFlip {
+  margin-top: 8vh;
+  margin-left: -5%;
+  height: 68%;
+  /* width: 46%; */
+  background-color: #efefff;
+  z-index: 100;
+}
+
+.ShirtFlipLeft {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #190dfe;
+  align-items: center;
+}
+.ShirtFlipLeft > img{
+  padding: 1em;
+  /* padding-bottom: 5em; */
+  border-bottom: 1px solid #190dfe;
+}
+.ShirtFlipLeft > h2{
+  padding: 0 1em;
+  margin-top: 2em;
+  font-family: 'VCR OSD Mono';
+  font-size: 17pt;
+  color: #190dfe;
+}
+
+.ShirtFlipBlue {
+  color: #190dfe;
+}
+
+.ShirtFlipWhite {
+  color: #efefff;
+  -webkit-text-fill-color: #efefff;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: #190dfe;;
+}
+
+.ShirtFlipRight {
+  padding: 0.5em 1.5em;
+}
+
+@media (max-width :580px) {
+  .ShirtFlip {
+    display: none;
+  }
+}
+
+/* --------------- Order -----------------------------*/
+.Order {
+  height: 98%;
+  margin-left: 10%;
+  min-width: 650px;
+  background-color: #efefff;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.OrderTitle {
+  border-bottom: 1px solid #190dfe;
+  padding: 0 0.5em;
+  padding-top: 1.2em;
+  font-family: "FoundersGrotesk-Semibold";
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 100%;
+}
+
+.OrderTitle > p {
+  padding-bottom: 2em;
+  margin: 0;
+  line-height: 100%;
+}
+
+.OrderPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #190dfe;
+}
+
+.OrderPriceLeft {
+  padding: 1em;
+  padding-top: 30px;
+  flex-basis: 60%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-family: "FoundersGrotesk-Semibold";
+  justify-content: center;
+}
+.OrderPriceLeft > h1 {
+  margin: 0;
+  font-family: "FoundersGrotesk-Semibold";
+  font-size: 50pt;
+}
+
+.OrderPriceLeft > p {
+  margin: 0;
+  padding: 10px;
+  font-size: 16pt;
+}
+
+.OrderPriceRight {
+  padding: 1em;
+  flex-basis: 40%;
+  border-left: 1px solid #190dfe;
+}
+.OrderPriceRight > p {
+  font-family: "VCR OSD Mono";
+  font-size: 14pt;
+}
+
+.OrderSize {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "VCR OSD Mono", monospace;
+  width: 100%;
+  margin: 1em;
+}
+
+.OrderSizeLeft > p {
+  font-size: 12pt;
+  flex-basis: 30%;
+}
+
+.OrderSize > a {
+  background: #190dfe;
+  color: #fff;
+  margin-left: 3%;
+  font-size: calc(var(--vh, 100vh)*0.065 - 6.5px);;
+  font-family: "VCR OSD Mono",monospace;
+  padding: 7px 20px;
+  width: 120px;
+  text-align: center;
+  flex-basis: 20%;
+}
+
+.OrderSize > a:hover {
+  box-shadow: 5px 5px 10px rgb(11 0 255 / 53%);
+  margin: 5px 0 0 calc(3% + 5px);
+}
+
+.OrderSizeWhite {
+  background: #efefff !important;
+  color: #000 !important;
+}
+
+.SoldOut {
+  background-color: orange;
+  color: #fff;
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  font-size: large;
+}
+
+@media (max-width :580px) {
+  .Order {
+    max-width: 400px;
+    min-width: 400px;
+    height: 75%;
+    margin-top: 50%;
+  }
+  .OrderTitle {
+    font-size: 16pt;
+  }
+  .OrderPrice {
+    display: flex;
+    flex-direction: column;
+  }
+  .OrderPriceRight {
+    border-left: none;
+    border-top: 1px solid #190dfe;;
+    padding-left: 25px;
+  }
+  .OrderSizeLeft > p {
+    font-size: 8pt;
+  }
+  .OrderSize > a {
+    padding: 10px 10px;
+    width: 50px;
+    font-size: 20pt;
+  }
+}
+
+/* --------------- About -----------------------------*/
+.About {
+  margin-top: 14vh;
+  height: 60%;
+  margin-left: 15%;
+  margin-right: 7%;
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #efefff;
+  padding: 1em;
+  font-family: "VCR OSD Mono",monospace;
+}
+
+/* --------------- Images -----------------------------*/
+.Image1 {
+  margin-top: 9vh;
+  margin-left: -3%;
+  height: 80%;
+  z-index: 10;
+}
+@media (max-width :580px) {
+  .Image1 {
+    height: 70%;
+    margin-top: 13vh;
+  }
+}
+.Image2 {
+  height: 98%;
+  margin-left: -3%;
+}
+.Image3 {
+  margin-top: 35vh;
+  margin-left: -3%;
+  height: 56%;
+}
+
+.Image4 {
+  margin-top: 7vh;
+  margin-left: -1%;
+  height: 80%;
+  z-index: 1000;
+}
+
+.Image5 {
+  margin-top: 13vh;
+  margin-left: -3%;
+  height: 80%;
+  z-index: 100;
+}
+
+.Image6 {
+  margin-top: 2vh;
+  margin-left: -1%;
+  height: 80%;
+  z-index: 10;
+}
+
+.Image7 {
+  margin-top: 15vh;
+  margin-left: -4%;
+  height: 80%;
+  z-index: 0;
+}
+
+.Image8 {
+  margin-top: 2vh;
+  margin-left: -6%;
+  height: 80%;
+  z-index: 10;
+}
+
+.Image9 {
+  margin-top: 15vh;
+  margin-left: -4%;
+  height: 80%;
+  z-index: 0;
+}
+
+.Image10 {
+  margin-top: 5vh;
+  margin-left: 7%;
+  height: 60%;
+}
+
+.Image11 {
+  margin-top: 43vh;
+  margin-left: -10%;
+  height: 45%;
+  z-index: 10;
+}
+@media (max-width :580px) {
+  .Image11 {
+    margin-left: -60%;
+  }
+}
+
+.Image12 {
+  margin-left: -10%;
+  height: 80%;
+  z-index: 0;
+}
+
+.Image13 {
+  margin-top: 15vh;
+  margin-left: -2%;
+  height: 80%;
+  z-index: 10;
+}
+@media (max-width :580px) {
+  .Image13 {
+    height: 70%;
+    margin-top: 25vh;
+  }
+}
+
+.Image14 {
+  margin-top: 3vh;
+  margin-left: -45%;
+  height: 40%;
+  z-index: 100;
+}
+@media (max-width :580px) {
+  .Image14 {
+    margin-left: -105%;
+  }
+}
+
+.Image15 {
+  margin-top: 43vh;
+  margin-left: 10%;
+  height: 45%;
+  z-index: 10;
+}
+
+/* --------------- Look Page -----------------------------*/
+.LookImage {
+  margin: 0.3em;
+  width: 170px;
+}
+
+@media (max-width :580px) {
+  .LookImage {
+    min-width: 250px;
+  }
+}
+
+/* --------------- Read Page -----------------------------*/
+.ReadContainer {
+  margin-top: 7%;
+}
+.ReadSection {
+  min-width: 430px;
+  align-items: center;
+  margin: 1em;
+}
+
+.ReadSection > p {
+  font-family: "FoundersGrotesk-Regular";
+  font-size: 11pt;
+  margin-top: 5px;
+}
+.ReadSection > h3 {
+  font-family: "FoundersGrotesk-Semibold";
+  font-size: 11pt;
+  margin-bottom: 0;
+}
+
+.ManifestoImage {
+  margin: 0.3em;
+  width: 100%;
+}
+.CollabContinuumImage {
+  margin: 0.3em;
+  width: 80%;
+}
+
+@media (max-width :580px) {
+  .ReadContainer {
+    margin-top: 50%;
+  }
+}
+
+/* --------------- Shared -----------------------------*/
+.Shadowed {
+  box-shadow: 10px 10px 10px rgb(11 0 255 / 53%), 0 2px 4px rgb(0 0 0 / 53%);
+}
+.Bordered {
+  border: 1px solid #190dfe;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+@font-face {
+  font-family: 'FoundersGrotesk-Regular';
+  /* font-style: normal;
+  font-weight: normal; */
+  src: url("../../fonts/FoundersGrotesk-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'FoundersGrotesk-Semibold';
+  /* font-style: normal;
+  font-weight: normal; */
+  src: url("../../fonts/FoundersGrotesk-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'VCR OSD Mono';
+  /* font-style: normal;
+  font-weight: normal; */
+  src: url("../../fonts/VCR_OSD_MONO_1.001.ttf") format("opentype");
+}
+
+/* --------------- Tickers -----------------------------*/
+.Ticker {
+  width: 100vw;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.SubTicker > p {
+  font-size: 11.2px;;
+}
+
+.SubTicker {
+  width: 100%;
+  border-top: 1px solid #190dfe;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 24px;
+}
+
+.Ticker:hover > .Top {
+  background-color: #0d00ff;
+}
+
+.Ticker:hover > .Top p {
+  color: #FFF;
+  animation-play-state: paused;
+}
+
+.Ticker:hover > .Bottom {
+  color: #FFF;
+  background-color: black;
+}
+
+.Ticker:hover > .Bottom p {
+  color: #FFF;
+  background-color: black;
+  animation-play-state: paused;
+}
+
+.Bottom {
+  border-bottom: 1px solid #190dfe;;
+}
+
+.Top > p {
+  min-width: 450px;
+  color: #0d00ff;
+  animation: scrollingRightToLeft 20s infinite linear;
+  margin: 0;
+  line-height: 24px;
+}
+
+.Bottom > p {
+  min-width: 450px;
+  animation: scrollingLeftToRight 20s infinite linear;
+  margin: 0;
+  line-height: 24px;
+}
+
+@keyframes scrollingRightToLeft{
+  from {transform: translateX(0%);}
+  to {transform: translateX(-100%);}
+}
+
+@keyframes scrollingLeftToRight{
+  from{transform: translateX(-100%);}
+  to{transform: translateX(0%);}
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #ededff;
+  width: 100vw;
+  min-height: 3em;
+}
+
+@media (max-width :580px) {
+  .FooterTop {
+    display: none;
+  }
+  .HeaderBottom {
+    display: none;
+  }
+  .Footer {
+    min-height: 0;
+  }
+  .SubTicker {
+    border-top: 1px solid #190dfe;
+    border-bottom: 1px solid #190dfe;
+  }
+}
